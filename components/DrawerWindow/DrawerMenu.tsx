@@ -8,6 +8,7 @@ import { DrawerBtn } from './DrawerBtn'
 import { ModalFormBtn } from '../ModalFormBtn/ModalForm'
 import { useContext } from 'react'
 import { ProfileContext } from 'context/ProfileContext'
+import { RiWhatsappFill } from 'react-icons/ri'
 
 interface IDrawerMenuProps {
   handlers: {
@@ -63,6 +64,11 @@ export const DrawerMenu = ({ handlers }: IDrawerMenuProps) => {
                 </>
               )}
             </Stack>
+            {!state?.info.isAdmin && (
+              <Stack mt={5}>
+                <DrawerBtn icon={RiWhatsappFill} title="Enviar mensaje" url="https://wa.me/541127748848" clicked={handlers.onClose} whatsapp />
+              </Stack>
+            )}
           </DrawerBody>
 
           <DrawerFooter borderTopWidth="1px" justifyContent="center">

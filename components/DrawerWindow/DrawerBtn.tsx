@@ -7,27 +7,15 @@ interface DrawerBtnProps {
   icon: IconType
   title: string
   url: string
-  revalidate?: boolean
+  whatsapp?: boolean
   clicked?: () => void
 }
 
-export const DrawerBtn = ({ icon, title, url, revalidate, clicked }: DrawerBtnProps) => {
-  const [revalidateState, setRevalidateState] = useState({ error: false, success: false })
+export const DrawerBtn = ({ icon, title, url, whatsapp, clicked }: DrawerBtnProps) => {
   const router = useRouter()
 
-  const onRevalidate = async () => {
-    const controller = new AbortController()
-    const signal = controller.signal
-
-    const data = await fetch(url, { signal })
-    if (data.status !== 200) {
-      setRevalidateState({ error: true, success: false })
-    } else {
-      setRevalidateState({ error: false, success: true })
-    }
-    setTimeout(() => {
-      setRevalidateState({ error: false, success: false })
-    }, 1000)
+  const onWhatsapp = async () => {
+    window.location.href = 'https://wa.me/541160366546'
   }
 
   return (
@@ -47,8 +35,8 @@ export const DrawerBtn = ({ icon, title, url, revalidate, clicked }: DrawerBtnPr
           transform: 'scale(0.9)',
         }}
         onClick={
-          revalidate
-            ? onRevalidate
+          whatsapp
+            ? onWhatsapp
             : () => {
                 clicked?.()
                 router.push(`${url}`)
@@ -57,18 +45,6 @@ export const DrawerBtn = ({ icon, title, url, revalidate, clicked }: DrawerBtnPr
         <Icon as={icon} w={6} h={6} mx={6} />
         <Text fontWeight="normal">{title}</Text>
       </Stack>
-      {revalidate && revalidateState.error && (
-        <Alert status="error">
-          <AlertIcon />
-          Error al revalidar.
-        </Alert>
-      )}
-      {revalidate && revalidateState.success && (
-        <Alert status="success">
-          <AlertIcon />
-          Revalidado con éxito
-        </Alert>
-      )}
     </>
   )
 }

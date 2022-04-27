@@ -59,7 +59,6 @@ const MisOrdenes = () => {
         <>
           <Head>
             <title>Can-Shop</title>
-            <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
           </Head>
           <Navbar />
           <Container maxWidth={{ base: 'container.xl', sm: 'container.md' }} rounded="md">
@@ -72,7 +71,6 @@ const MisOrdenes = () => {
               ))}
             </CustomContainer>
           </Container>
-          <Footer />
           <AlertWindow isOpen={isOpen} onClose={onClose} title="Alerta!" msg="Sesión expirada. Haga login de nuevo." CB={logOut} />
         </>
       ) : (

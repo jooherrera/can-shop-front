@@ -86,7 +86,6 @@ const Cart: NextPage = () => {
     <>
       <Head>
         <title>Can-Shop</title>
-        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
       </Head>
       <Navbar />
       <Container maxWidth={{ base: 'container.xl', sm: 'container.md' }} rounded="md">
@@ -129,7 +128,6 @@ const Cart: NextPage = () => {
           )}
         </CustomContainer>
       </Container>
-      <Footer />
 
       {/* ------------------------------ ALERT WINDOW ------------------------------ */}
       <AlertWindow isOpen={isOpen} onClose={onClose} title={alert.title} msg={alert.msg} />

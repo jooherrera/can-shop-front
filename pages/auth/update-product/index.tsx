@@ -50,7 +50,6 @@ const UpdateProduct = () => {
         <>
           <Head>
             <title>Can-Shop</title>
-            <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
           </Head>
           <Navbar />
           <Container maxWidth={{ base: 'container.xl', sm: 'container.md' }} rounded="md">
