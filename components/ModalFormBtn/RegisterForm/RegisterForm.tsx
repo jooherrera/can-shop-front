@@ -8,7 +8,7 @@ import { RegisterForm_Input } from './RegisterForm_Input'
 const useRegisterForm = () => {
   const [status, setStatus] = useState({ error: false, fetching: false, success: false, msg: '' })
   const { value: valueEmail, render: renderEmailInput } = RegisterForm_Input({ title: 'E-mail ' })
-  const { value: valuePassword, render: renderPasswordInput } = RegisterForm_Input({ title: 'Password ' })
+  const { value: valuePassword, render: renderPasswordInput } = RegisterForm_Input({ title: 'Password ', pwd: true })
   const { value: valueName, render: renderNameInput } = RegisterForm_Input({ title: 'Nombre ' })
   const { value: valueLastName, render: renderLastNameInput } = RegisterForm_Input({ title: 'Apellido ' })
   const { value: valuePhone, render: renderPhoneInput } = RegisterForm_Input({ title: 'Teléfono ' })

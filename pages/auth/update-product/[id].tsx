@@ -5,6 +5,7 @@ import { Navbar } from '@components/Layout/Navbar/Navbar'
 import { ProductForm } from '@components/ProductForm/ProductForm'
 import { UpdateProduct_Alert } from '@components/UpdateProduct/UpdateProduct_Alert'
 import { ProfileContext } from 'context/ProfileContext'
+import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { useContext, useEffect, useState } from 'react'
 
@@ -40,6 +41,10 @@ const Item = () => {
 
   return (
     <>
+      <Head>
+        <title>Can-Shop</title>
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+      </Head>
       <Navbar />
       <Container maxWidth={{ base: 'container.xl', sm: 'container.md' }} rounded="md">
         <CustomContainer>

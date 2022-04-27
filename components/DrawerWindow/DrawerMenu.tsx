@@ -52,7 +52,7 @@ export const DrawerMenu = ({ handlers }: IDrawerMenuProps) => {
                   <hr />
                   <DrawerBtn icon={GrConfigure} title="Actualizar orden" url="/auth/update-orden" clicked={handlers.onClose} />
                   <hr />
-                  <DrawerBtn icon={GrConfigure} title="Revalidate" url="/api/revalidate/?secret=secret" revalidate />
+                  {/* <DrawerBtn icon={GrConfigure} title="Revalidate" url="/api/revalidate/?secret=secret" revalidate /> */}
                 </>
               )}
 

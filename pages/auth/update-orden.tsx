@@ -11,6 +11,7 @@ import { AlertFeedback } from '@components/AlertFeedback/AlertFeedback'
 import { OrderReducer } from 'reducers/expirar-orden'
 import { Orden_Item } from '@components/OrdenDeCompra/Orden_Item'
 import { useRouter } from 'next/router'
+import Head from 'next/head'
 
 const ExpirarOrden = () => {
   const { state } = useContext(ProfileContext)
@@ -59,8 +60,7 @@ const ExpirarOrden = () => {
       dispatch(onSuccess(resp.data))
 
       dispatch(onUpdate(arr))
-    } catch (error: any) {
-    }
+    } catch (error: any) {}
   }
 
   const onLoadCustom = async (param: string) => {
@@ -85,6 +85,10 @@ const ExpirarOrden = () => {
   if (!state?.info.isAdmin) return <ErrorPage statusCode={404} />
   return (
     <>
+      <Head>
+        <title>Can-Shop</title>
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+      </Head>
       <Navbar />
       <Container maxWidth={{ base: 'container.xl', sm: 'container.md' }} rounded="md">
         <CustomContainer>

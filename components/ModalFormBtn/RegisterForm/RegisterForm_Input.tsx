@@ -4,9 +4,10 @@ import { BiErrorAlt } from 'react-icons/bi'
 
 type RegisterForm_Input = {
   title: string
+  pwd?: boolean
 }
 
-export const RegisterForm_Input = ({ title }: RegisterForm_Input) => {
+export const RegisterForm_Input = ({ title, pwd }: RegisterForm_Input) => {
   const { value, onHandleInput } = useInput()
 
   return {
@@ -16,7 +17,7 @@ export const RegisterForm_Input = ({ title }: RegisterForm_Input) => {
         <FormLabel mt={4}>
           {title} {!value && <Icon as={BiErrorAlt} color="red" />}
         </FormLabel>
-        <Input placeholder={title} onChange={onHandleInput} value={value} />
+        <Input type={pwd ? 'password' : 'text'} placeholder={title} onChange={onHandleInput} value={value} />
       </>
     ),
   }

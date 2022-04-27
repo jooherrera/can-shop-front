@@ -7,6 +7,7 @@ import ErrorPage from 'next/error'
 import { Navbar } from '@components/Layout/Navbar/Navbar'
 import { ProductItem } from '@components/ProductForm/ProductItem'
 import { Footer } from '@components/Footer/Footer'
+import Head from 'next/head'
 
 const UpdateProduct = () => {
   const { state, fetchAllProductsToDelete } = useContext(ProfileContext)
@@ -47,6 +48,10 @@ const UpdateProduct = () => {
     <>
       {state?.info.isAdmin ? (
         <>
+          <Head>
+            <title>Can-Shop</title>
+            <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+          </Head>
           <Navbar />
           <Container maxWidth={{ base: 'container.xl', sm: 'container.md' }} rounded="md">
             <CustomContainer>
