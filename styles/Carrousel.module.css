@@ -1,0 +1,12 @@
+.container {
+  position: absolute;
+  /* background-color: red; */
+  padding: 4px;
+}
+
+.isVisibleTrue {
+  visibility: visible;
+}
+.isVisibleFalse {
+  visibility: hidden;
+}
